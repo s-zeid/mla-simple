@@ -24,7 +24,7 @@ Other features of MLA Simple include:
   document, not just ones that use MLA Simple.
 
 Requirements
-============
+------------
 * Packages
    * datetime
    * ifpdf
@@ -33,7 +33,7 @@ Requirements
    * natbib
 
 Usage
-=====
+-----
 Simply include mla-simple using `\input{mla-simple.tex}`.  Then, begin
 your document environment as usual (but you do not need to declare the
 document class; MLA Simple does this for you) and then create an instance
@@ -60,7 +60,7 @@ Finally, convert your document into the appropriate format.  The included
 Makefile can convert your document into PDF or DVI format for you.
 
 Example
-=======
+-------
     \input{mla-simple.tex}
     \begin{document}
     \begin{mla-simple}
@@ -73,31 +73,35 @@ Example
     \end{document}
 
 Formatting tips
-===============
+---------------
 * Sometimes, you have to cite full dates, not just the year.  However, you
   could simply put the whole date field, like this:
-       year    = "4 April 1984"
+
+         year    = "4 April 1984"
+
+
 * When citing Web resources, you usually have to include the date on which
   you retrieved it.  You can do this using the note field.  For example:
-      @misc{starbucks,
-       author  = "Starbucks Coffee",
-       title   = "Starbucks Coffee",
-       note    = "Web. 16 April 2012",
-       url     = "http://www.starbucks.com/"
-      }
+
+        @misc{starbucks,
+         author  = "Starbucks Coffee",
+         title   = "Starbucks Coffee",
+         note    = "Web. 16 April 2012",
+         url     = "http://www.starbucks.com/"
+        }
+
 * To restore the default US date format when using `\today`, do `\usdate`.
   (This is part of the `datetime` package.)  To go back to MLA dates, do
   `\mladate` (from MLA Simple).  See [the `datetime` documentation]
   [datetime] for more date formats.
 
 Makefile usage
-==============
+--------------
 The included Makefile is intended to help simplify the process of
 converting a LaTeX document into other formats.  Currently DVI and PDF
 are supported.
 
-Targets
--------
+### Targets
 (assuming your document's filename is `starbucks.tex`)
 
 * `starbucks`
@@ -113,7 +117,7 @@ Targets
   current directory.
 
 `write` usage
-=============
+-------------
 MLA Simple includes a shell script, `write`, that runs the editor defined
 in `$EDITOR` and then runs the Makefile on the given LaTeX file.  It will
 be created with a simple template if it does not exist, and an empty
@@ -121,8 +125,7 @@ BibTeX file will also be created if necessary.  If the editor is Vim or
 Gvim, it will open both the LaTeX file and the BibTeX file in tabs.  (Vim
 7 or later is required for this to work.)
 
-Invocation
-----------
+### Invocation
 `./write <filename without .tex extension> [<extension of output file>]`
 
 If the output file extension is not given, it will default to `pdf`.  This
@@ -130,7 +133,7 @@ argument is simply passed on to the Makefile.  For PDFs, the Makefile will
 also leave behind a DVI file.
 
 Credits
-=======
+-------
 * [mla-good.bst obtained from the Reed College Help Desk.][mla-good.bst]
   This version actually works with recent versions of BibTeX.  I have
   modified this to fix the formatting of URLs.  (They should be enclosed
@@ -140,7 +143,7 @@ Credits
   without leaving extra vertical space.
 
 License
-=======
+-------
 The template is released under the X11 License.  However, please note
 that the included `mla-good.bst` BibTeX style is released under the LaTeX
 Project Public License (version 1.0 or later), which [is not compatible
