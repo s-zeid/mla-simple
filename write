@@ -1,0 +1,29 @@
+#!/bin/bash
+
+TEMPLATE="template-mla.tex"
+
+if [ -z "$1" ]; then
+ echo "Usage: $0 name [extension=pdf]"
+ exit 2
+fi
+
+NAME=$1
+EXT=$2
+
+[ -e "$NAME.tex" ] || cp "$TEMPLATE" "$NAME.tex"
+[ -e "$NAME.bib" ] || echo "@misc{dummy,title=title}" > "$NAME.bib"
+
+$USE_VIM=0
+echo -n "$EDITOR" | grep "vim" && vim --help | grep " -p" && USE_VIM=1
+
+if [ $USE_VIM ]; then
+ $EDITOR -p "$NAME.tex" "$NAME.bib"
+else
+ $EDITOR "$NAME.tex"
+fi
+
+if [ -n "$EXT" ]; then
+ make $NAME.$EXT
+else
+ make $NAME
+fi

@@ -1,0 +1,45 @@
+% mla-simple
+% A simple MLA LaTeX environemt.
+% (c) 2012 Scott Zeid.
+% Released under the X11 License.
+
+\documentclass[12pt,letterpaper]{article}
+\usepackage{ifpdf,mla,natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{datetime}
+
+% Enable 2 spaces after periods
+\nonfrenchspacing
+
+% Define and use a new MLA date format (D MMMMM YYYY)
+\newdateformat{mladate}{\THEDAY\ \monthname[\THEMONTH] \THEYEAR}
+\mladate
+
+% Define \bibfilename to be the filename (no extension) of the current
+% job (i.e. the top-most LaTeX file, I thing)
+\newcommand{\bibfilename}{\jobname}
+% Suppress the extraneous "References" header above the bibliography
+\newcommand{\mlasimplebib}{\def\section*##1{}\bibliography{\bibfilename}}
+
+% Public commands
+% Alias for `(\citealt{source})`
+\newcommand{\mcite}[1]{(\citealt{#1})}
+% Disables the Works Cited page
+\newcommand{\nowc}{\newcommand{\mlasimplenoworkscited}{This is invisible.}}
+% Changes the BibTeX database by redefining \bibfilename
+\newcommand{\wcfile}[1]{\renewcommand{\bibfilename}{#1}}
+
+% Environment that simplifies making Works Cited pages.
+\newenvironment{mla-simple}[6]
+{
+\begin{mla}{#1}{#2}{#3}{#4}{#5}{#6}
+}
+{
+\ifx \mlasimplenoworkscited \undefined
+\begin{workscited}
+\bibliographystyle{mla-good2}
+\mlasimplebib
+\end{workscited}
+\fi
+\end{mla}
+}
