@@ -1,3 +1,10 @@
+# mla-simple
+# Simplifies the process of writing MLA papers in LaTeX.
+# Copyright (c) 2012 Scott Zeid.
+# Released under the X11 License.
+
+# This should work with normal LaTeX files, not just MLA Simple ones.
+
 all:
 	@echo "Nothing to do by default."
 	@false
