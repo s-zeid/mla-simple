@@ -1,6 +1,6 @@
 MLA Simple
 ==========
-Simplifies the process of writing MLA papers in LaTeX.
+Simplifies the process of writing MLA papers in LaTeX.  
 Copyright (c) 2012 Scott Zeid.  Released under the X11 License.
 
 This is a LaTeX file, `mla-simple.tex`, that simplifiies the creation
