@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEMPLATE="template-mla.tex"
+TEMPLATE="template.tex"
 
 if [ -z "$1" ]; then
  echo "Usage: $0 name [extension=pdf]"
