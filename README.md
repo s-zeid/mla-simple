@@ -13,7 +13,7 @@ when using the MLA package by itself, specifically:
   Works Cited page.
 * Re-enables two spaces after periods.
 * Uses the correct 12 point font size.
-* Includes and uses a BibTeX style called "mla-new" by Patrick W Daly.
+* Includes and uses a BibTeX style called "mla-new" by Patrick W. Daly.
 * Fixes the above BibTeX style to use proper formatting for URLs.
 
 Other features of MLA Simple include:
@@ -145,9 +145,10 @@ Credits
 License
 -------
 The template is released under the X11 License.  However, please note
-that the included `mla-good.bst` BibTeX style is released under the LaTeX
-Project Public License (version 1.0 or later), which [is not compatible
-with the GNU General Public License][lppl-gpl].
+that the included `mla-simple.bst` BibTeX style, based on `mla-new.bst` by
+Patrick W. Daaly, is released under the LaTeX Project Public License (version
+1.0 or later), which [is not compatible with the GNU General Public License]
+[lppl-gpl].
 
 [datetime]:
  http://theoval.cmp.uea.ac.uk/~nlct/latex/packages/datetime/datetime-manual.html
