@@ -1,3 +1,7 @@
+*.bib
 *.dvi
 *.pdf
+*.tex
 starbucks.*
+!mla-simple.tex
+!template.tex
