@@ -13,7 +13,7 @@ EXT=$2
 [ -e "$NAME.tex" ] || cp "$TEMPLATE" "$NAME.tex"
 [ -e "$NAME.bib" ] || echo "@misc{dummy,title=title}" > "$NAME.bib"
 
-$USE_VIM=0
+USE_VIM=0
 echo -n "$EDITOR" | grep "vim" && vim --help | grep " -p" && USE_VIM=1
 
 if [ $USE_VIM ]; then
